@@ -1,0 +1,17 @@
+🎯 Goal
+
+The password for the next level is stored in a hidden file inside the inhere directory.
+
+ls -all
+
+cat ...Hiding-From-You
+
+The file name is literally ...Hiding-From-You
+
+It starts with dots → hidden by default
+
+ls does NOT show hidden files
+
+ls -a or ls -all does
+
+You already discovered it — you just needed to read it.
