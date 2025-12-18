@@ -1,0 +1,23 @@
+🔹 Level 1
+🎯 Goal
+
+Read the password from a file named - in the home directory.
+
+❌ Common Mistake
+cat -
+
+
+This fails because - represents standard input (stdin) in Linux.
+
+✅ Correct Solution
+cat ./-
+
+🧠 Explanation
+
+Filenames starting with - are treated as command options
+
+./ explicitly tells the shell that - is a filename in the current directory
+
+This removes ambiguity and allows cat to read the file correctly
+
+The output is the password for bandit2.
