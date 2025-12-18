@@ -1,0 +1,91 @@
+Password is in a file somewhere under inhere/ with all of these properties:
+
+human-readable
+
+exactly 1033 bytes
+
+not executable
+
+This is a textbook use-case for find.
+
+❌ Wrong approach (what you started doing)
+
+Manually entering:
+
+cd maybehere00
+ls
+cd maybehere01
+ls
+...
+
+
+This is:
+
+Slow
+
+Error-prone
+
+Against the Linux philosophy
+
+✅ Correct Solution (ONE command)
+
+Run this from inside inhere:
+
+find . -type f -size 1033c ! -executable
+
+🧠 What this command means (simple)
+Part	Meaning
+find .	search starting here
+-type f	only files (not directories)
+-size 1033c	exactly 1033 bytes (c = bytes)
+! -executable	NOT executable
+
+This narrows hundreds of files → exactly one.
+
+🔍 Next step: verify it’s readable
+
+You’ll get output like:
+
+./maybehere07/.file2
+
+
+Now check and read it:
+
+file ./maybehere07/.file2
+cat ./maybehere07/.file2
+
+
+The output is the password for bandit6.
+
+🧠 Why this is powerful
+
+You just learned:
+
+Recursive searching
+
+Filtering by size
+
+Filtering by permissions
+
+How sysadmins find files on real servers
+
+This is real Linux skill, not a puzzle trick.
+
+📌 GitHub-ready writeup (clean & short)
+## Bandit Level 5
+
+The password is stored somewhere under `inhere/` and is:
+- human-readable
+- exactly 1033 bytes
+- not executable
+
+Solution:
+bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+                                     
+
+
+
+This uses `find` to filter files by size and permissions instead of manual searching.
