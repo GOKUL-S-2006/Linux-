@@ -1,0 +1,9 @@
+🎯 Goal
+
+The password for the next level is stored in a file with spaces in its name, located in the home directory.
+
+cat -- "--spaces in this filename--"
+Problem	Solution
+Spaces in filename	Use quotes
+Filename starts with -	Use ./filename or --
+Both combined	cat -- "filename"
