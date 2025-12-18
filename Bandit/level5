@@ -1,0 +1,35 @@
+🎯 Goal
+
+Find the password for the next level.
+The password is stored in one human-readable file among several files that all start with -.
+
+🧩 Problem
+
+All files:
+
+Start with - (can be misinterpreted as options)
+
+Contain different types of data
+
+Only one file contains ASCII (text) data
+
+✅ Solution
+Step 1: Identify the readable file
+file ./-file*
+
+
+This checks the type of every file safely.
+
+Step 2: Read the ASCII text file
+cat ./-fileXX
+
+
+(XX is the file number shown as ASCII text in the previous command)
+
+🧠 Explanation
+
+Filenames starting with - must be accessed using ./ or --
+
+The file command identifies file contents without opening them
+
+Only the file marked ASCII text contains the password
