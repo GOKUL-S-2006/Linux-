@@ -1,0 +1,29 @@
+🔹 Level 0
+🎯 Goal
+
+Log into the Bandit server using SSH.
+
+🧪 Command
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+🔐 Credentials
+
+Username: bandit0
+
+Password: bandit0
+
+🧠 Explanation
+
+ssh is used to connect to a remote Linux machine securely
+
+bandit0 is the user for Level 0
+
+-p 2220 specifies a non-default SSH port
+
+After login, list files and read the password file:
+
+ls
+cat readme
+
+
+The output of readme contains the password for bandit1.
