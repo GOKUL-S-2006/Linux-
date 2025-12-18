@@ -1,0 +1,17 @@
+### Bandit Level 6 → Level 7
+
+The password file is stored somewhere on the server, so we must search from `/`.
+
+Command used:
+find / -type f -size 33c -user bandit7 -group bandit6 2>/dev/null
+
+Explanation:
+- `/` → search entire filesystem
+- `-type f` → only regular files
+- `-size 33c` → exactly 33 bytes
+- `-user bandit7` → owned by bandit7
+- `-group bandit6` → group bandit6
+- `2>/dev/null` → suppress permission errors
+
+Result:
+`/var/lib/dpkg/info/bandit7.password`
